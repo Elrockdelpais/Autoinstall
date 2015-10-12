@@ -10,10 +10,41 @@ adduser $USERNAME sudo
 apt-get install -y curl python-pip flashplugin-nonfree openjdk-7-jdk gparted git
 
 # Administrador de archivos
-apt-get  install -y nemo
+# Pequeño menu para seleccionar administrador de archivos
+echo "Administradores de archivos"
+echo "---------------------------"
+echo
+echo "1) nemo"
+echo "2) thunar"
+read -p "Seleccione cual desea instalar: " VAR
+echo
+case "$VAR" in
+1) apt-get install -y nemo ;;
+2) apt-get install -y thunar ;;
+*) echo "Opcion invalida intente de nuevo" ;;
+esac
+
+# Limpiamos la consola
+clear
 
 # Procesador de texto
-apt-get install -y vim-nox
+echo "Administradores de archivos"
+echo "---------------------------"
+echo
+echo "1) vim-nox"
+echo "2) gedit"
+echo "3) mousepad"
+echo "4) leafpad"
+echo
+read -p "Seleccione cual desea instalar: " VAR
+echo
+case "$VAR" in
+1) apt-get install -y vim-nox ;;
+2) apt-get install -y gedit ;;
+3) apt-get install -y mousepad ;;
+4) apt-get install -y leafpad ;;
+*) echo "Opcion invalida intente de nuevo" ;;
+esac
 
 # Terminal
 apt-get install -y terminator
